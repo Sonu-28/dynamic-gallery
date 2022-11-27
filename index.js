@@ -9,14 +9,18 @@ const type =document.getElementById('selectbox');
 button.addEventListener('click', function(event){
     let imageurl = document.getElementById('url').value
     let typeofimg = type.value;
-        
-    filter.innerHTML += `
-    <div class="image">
-        <img src="${imageurl}" alt="img">
-        <button id="delete">Delete</button>
-    </div>
+        if(imageurl.length == 0){
+            alert('image is not there')
+        }else{
+            filter.innerHTML += `
+                <div class="image">
+                <img src="${imageurl}" alt="img">
+                <button id="delete">Delete</button>
+                </div>
 
 `
+    }
+
 })
 
 function deleteimg (e){
